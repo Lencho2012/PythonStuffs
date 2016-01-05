@@ -6,9 +6,11 @@ for num in squares:
 	sum += num
 print sum ##30?
 
-list = ['larry', 'curly', 'moe']
+list = ['larry', 'urly', 'moe']
 if 'curly' in list:
-	print 'yay'
+	print 'yay'	
+else:
+	print 'NOOO'
 
 for i in range(5):
 	print 'dodo'
@@ -72,3 +74,4 @@ def sumProb(x, y):
 	print (sentence)
 	
 main()
+
