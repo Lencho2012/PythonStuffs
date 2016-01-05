@@ -49,3 +49,16 @@ print shout
 nums = [2, 8, 1, 5]
 small = [n for n in nums if n <= 2]
 print small
+
+
+person = raw_input("Enter you here: ")
+print('What', person)
+
+
+def sayStuff():
+	print "STuff"
+	print "STUFF"
+	print "MORE STUFF"
+	
+sayStuff()
+
