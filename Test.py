@@ -62,3 +62,7 @@ def sayStuff():
 	
 sayStuff()
 
+def main():
+	sayStuff()
+	
+main()
