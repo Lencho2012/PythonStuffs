@@ -64,5 +64,11 @@ sayStuff()
 
 def main():
 	sayStuff()
+	sumProb(100, 200)
+	
+def sumProb(x, y):
+	sum = x + y
+	sentence = 'Sum of {} and {} is {}.'.format(x, y, sum)
+	print (sentence)
 	
 main()
