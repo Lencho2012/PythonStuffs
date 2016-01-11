@@ -14,6 +14,14 @@ else:
 
 for i in range(5):
 	print 'dodo'
+	
+str = '255.255'
+#strLen = len(str)
+
+for i in range(len(str)):
+	if str[i] == '2':
+		print 'DONE'
+	
 
 a = ['red', 'green', 'blue']
 i = 0
@@ -53,8 +61,8 @@ small = [n for n in nums if n <= 2]
 print small
 
 
-person = raw_input("Enter you here: ")
-print('What', person)
+##person = raw_input("Enter you here: ")
+##print('What', person)
 
 
 def sayStuff():
@@ -73,5 +81,15 @@ def sumProb(x, y):
 	sentence = 'Sum of {} and {} is {}.'.format(x, y, sum)
 	print (sentence)
 	
-main()
+def netmaskLength():
+	netmask = raw_input("Enter Netmask: ")
+	octSeperator = []
+	for a in netmask:
+		if netmask[a] == '.':
+			octSeperator.append(a)
+	print "Done"
+		
+	
+	
+netmaskLength()
 
