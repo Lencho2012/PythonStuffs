@@ -17,10 +17,6 @@ for i in range(5):
 	
 str = '255.255'
 #strLen = len(str)
-
-for i in range(len(str)):
-	if str[i] == '2':
-		print 'DONE'
 	
 
 a = ['red', 'green', 'blue']
@@ -60,7 +56,9 @@ nums = [2, 8, 1, 5]
 small = [n for n in nums if n <= 2]
 print small
 
-
+for i in range(len(str)):
+	if str[i] == '2':
+		print 'DONE'
 ##person = raw_input("Enter you here: ")
 ##print('What', person)
 
@@ -84,12 +82,36 @@ def sumProb(x, y):
 def netmaskLength():
 	netmask = raw_input("Enter Netmask: ")
 	octSeperator = []
-	for a in netmask:
+	for a in range(len(netmask)):
 		if netmask[a] == '.':
 			octSeperator.append(a)
 	print "Done"
-		
-	
-	
+	print octSeperator	
+	firstOct = netmask[:octSeperator[0]]
+	secondOct = netmask[octSeperator[0]+1:octSeperator[1]]
+	thirdOct = netmask[octSeperator[1]+1:octSeperator[2]]
+	fourthOct = netmask[octSeperator[2]+1:]
+	print firstOct
+	print secondOct
+	print thirdOct
+	print fourthOct
+	print "{0:b}".format(int(firstOct))
+	binFirst = int("{0:b}".format(int(firstOct))) #Binary number
+	strBinFirst = ("{0:b}".format(int(firstOct))) #Binary as a string
+	print strBinFirst
+	print "{0:b}".format(int(secondOct))
+	binSecond = int("{0:b}".format(int(secondOct)))
+	print "{0:b}".format(int(thirdOct))
+	binThird = int("{0:b}".format(int(thirdOct)))
+	print "{0:b}".format(int(fourthOct))
+	binFourth = int("{0:b}".format(int(fourthOct)))
+	print 'bins'
+	print binFirst
+	print binSecond
+	print binThird
+	print binFourth
+	for a in range(8):
+		if len(strBinFirst) != 8:
+			strBinFirst = "0" + strBinFirst	
+	print strBinFirst
 netmaskLength()
-
