@@ -112,6 +112,6 @@ def netmaskLength():
 	print binFourth
 	for a in range(8):
 		if len(strBinFirst) != 8:
-			strBinFirst = "0" + strBinFirst	
+			strBinFirst = "0" + strBinFirst	#turning strings into full octets
 	print strBinFirst
 netmaskLength()
