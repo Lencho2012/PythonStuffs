@@ -1,83 +1,83 @@
-
-
-squares = [1, 4, 9, 16]
-sum = 0
-for num in squares:
-	sum += num
-print sum ##30?
-
-list = ['larry', 'urly', 'moe']
-if 'curly' in list:
-	print 'yay'	
-else:
-	print 'NOOO'
-
-for i in range(5):
-	print 'dodo'
-	
-str = '255.255'
-#strLen = len(str)
-	
-
-a = ['red', 'green', 'blue']
-i = 0
-while i < len(a):
-	print a[i]
-	i = i + 1
-	
-print list[:]
-
-list = ['a', 'b', 'c', 'd']
-list[0:2] = 'z'
-print list
-
-
-a = [5, 1, 4, 3]
-print sorted(a)
-print a
-
-strs = ['aa', 'BB', 'zz', 'CC']
-print sorted(strs, reverse=True)
-print sorted(strs)
-
-(x, y, z) = (42, 13, 'hike')
-print z 
-
-nums = [1, 2, 3, 4]
-sqrs = [n * n for n in nums]
-
-print sqrs
-
-str = ['hello', 'and', 'goodbye']
-shout = [s.upper() + '!!!' for s in str]
-print shout
-
-nums = [2, 8, 1, 5]
-small = [n for n in nums if n <= 2]
-print small
-
-for i in range(len(str)):
-	if str[i] == '2':
-		print 'DONE'
-##person = raw_input("Enter you here: ")
-##print('What', person)
-
-
-def sayStuff():
-	print "STuff"
-	print "STUFF"
-	print "MORE STUFF"
-	
-sayStuff()
-
-def main():
-	sayStuff()
-	sumProb(100, 200)
-	
-def sumProb(x, y):
-	sum = x + y
-	sentence = 'Sum of {} and {} is {}.'.format(x, y, sum)
-	print (sentence)
+# 
+# 
+# # squares = [1, 4, 9, 16]
+# # sum = 0
+# # for num in squares:
+# # 	sum += num
+# # print sum ##30?
+# 
+# list = ['larry', 'urly', 'moe']
+# if 'curly' in list:
+# 	print 'yay'	
+# else:
+# 	print 'NOOO'
+# 
+# for i in range(5):
+# 	print 'dodo'
+# 	
+# str = '255.255'
+# #strLen = len(str)
+# 	
+# 
+# a = ['red', 'green', 'blue']
+# i = 0
+# while i < len(a):
+# 	print a[i]
+# 	i = i + 1
+# 	
+# print list[:]
+# 
+# list = ['a', 'b', 'c', 'd']
+# list[0:2] = 'z'
+# print list
+# 
+# 
+# a = [5, 1, 4, 3]
+# print sorted(a)
+# print a
+# 
+# strs = ['aa', 'BB', 'zz', 'CC']
+# print sorted(strs, reverse=True)
+# print sorted(strs)
+# 
+# (x, y, z) = (42, 13, 'hike')
+# print z 
+# 
+# nums = [1, 2, 3, 4]
+# sqrs = [n * n for n in nums]
+# 
+# print sqrs
+# 
+# str = ['hello', 'and', 'goodbye']
+# shout = [s.upper() + '!!!' for s in str]
+# print shout
+# 
+# nums = [2, 8, 1, 5]
+# small = [n for n in nums if n <= 2]
+# print small
+# 
+# for i in range(len(str)):
+# 	if str[i] == '2':
+# 		print 'DONE'
+# ##person = raw_input("Enter you here: ")
+# ##print('What', person)
+# 
+# 
+# def sayStuff():
+# 	print "STuff"
+# 	print "STUFF"
+# 	print "MORE STUFF"
+# 	
+# sayStuff()
+# 
+# def main():
+# 	sayStuff()
+# 	sumProb(100, 200)
+# 	
+# def sumProb(x, y):
+# 	sum = x + y
+# 	sentence = 'Sum of {} and {} is {}.'.format(x, y, sum)
+# 	print (sentence)
 	
 def netmaskLength():
 	netmask = raw_input("Enter Netmask: ")
@@ -85,20 +85,22 @@ def netmaskLength():
 	for a in range(len(netmask)):
 		if netmask[a] == '.':
 			octSeperator.append(a)
-	print "Done"
-	print octSeperator	
+	print '------Indices for Octets------'
+	print octSeperator 
 	firstOct = netmask[:octSeperator[0]]
 	secondOct = netmask[octSeperator[0]+1:octSeperator[1]]
 	thirdOct = netmask[octSeperator[1]+1:octSeperator[2]]
 	fourthOct = netmask[octSeperator[2]+1:]
+	print '------Individual Octets------'
 	print firstOct
 	print secondOct
 	print thirdOct
 	print fourthOct
-	print "{0:b}".format(int(firstOct))
+	print '------Converting to Binary------'
+	print "{0:b}".format(int(firstOct)) + ' ---> Printed as a Binary number'
 	binFirst = int("{0:b}".format(int(firstOct))) #Binary number
 	strBinFirst = ("{0:b}".format(int(firstOct))) #Binary as a string
-	print strBinFirst
+	print strBinFirst + ' ---> Printed as a string'
 	print "{0:b}".format(int(secondOct))
 	binSecond = int("{0:b}".format(int(secondOct)))
 	print "{0:b}".format(int(thirdOct))
