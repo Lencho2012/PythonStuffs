@@ -88,13 +88,14 @@ def separator(ipv4):
 	return octSeparator
 	
 ##Converting individual octets into binary and dumping in a list
-def convertToBinary(octList):
+def convertToBinaryList(octList):
 	print '------------------------------'
 	octBinList = []
 	for a in range(4):
 		octBinList.append(bin(int(octList[a])))
-	return octBinList
+	return octBinList	
 	
+
 
 def netmaskLength():
 	netmask = raw_input("\n\nEnter Netmask: ")
@@ -118,8 +119,11 @@ def netmaskLength():
 	octList = [firstOct, secondOct, thirdOct, fourthOct]
 	print octList
 	
-	octBinList = convertToBinary(octList)
+	octBinList = convertToBinaryList(octList)
 	print octBinList
+	i = 10001000
+	j = 01110111
+	print i & j
 
 	print '------Converting to Binary------'
 	print "{0:b}".format(int(firstOct))
@@ -135,6 +139,8 @@ def netmaskLength():
 # 	print binSecond
 # 	print binThird
 # 	print binFourth
+	
+##
 	
 	strBinFirst = ("{0:b}".format(int(firstOct))) #Binary as a string
 	for a in range(8):
@@ -153,6 +159,8 @@ def netmaskLength():
 			strBinThird = "0" + strBinThird	#turning strings into full octets
 	print strBinThird
 	strBinFourth = ("{0:b}".format(int(fourthOct))) #Binary as a string
+	
+##
 	for a in range(8):
 		if len(strBinFourth) != 8:
 			strBinFourth = "0" + strBinFourth	#turning strings into full octets
