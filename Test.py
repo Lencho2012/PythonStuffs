@@ -86,25 +86,40 @@ def separator(ipv4):
 		if ipv4[a] == '.':
 			octSeparator.append(a)
 	return octSeparator
-
 	
+##Converting individual octets into binary and dumping in a list
+def convertToBinary(octList):
+	print '------------------------------'
+	octBinList = []
+	for a in range(4):
+		octBinList.append(bin(int(octList[a])))
+	return octBinList
+	
+
 def netmaskLength():
 	netmask = raw_input("\n\nEnter Netmask: ")
-	octSeparator = separator(netmask)
 
 	print '------Indices for Octets------'
+	octSeparator = separator(netmask)
 	print octSeparator 
+	
 	##Separating Octets
+	print '------Individual Octets------'
 	firstOct = netmask[:octSeparator[0]]
 	secondOct = netmask[octSeparator[0]+1:octSeparator[1]]
 	thirdOct = netmask[octSeparator[1]+1:octSeparator[2]]
 	fourthOct = netmask[octSeparator[2]+1:]
 
-	print '------Individual Octets------'
 	print firstOct
 	print secondOct
 	print thirdOct
 	print fourthOct
+	
+	octList = [firstOct, secondOct, thirdOct, fourthOct]
+	print octList
+	
+	octBinList = convertToBinary(octList)
+	print octBinList
 
 	print '------Converting to Binary------'
 	print "{0:b}".format(int(firstOct))
@@ -151,7 +166,7 @@ def netmaskLength():
 	strPrefix = str(prefix)
 	print "Prefix = /" + strPrefix
 	
-	ipAddress = raw_input("Enter IP Address: ")
+	#ipAddress = raw_input("Enter IP Address: ")
 
 
 netmaskLength()
