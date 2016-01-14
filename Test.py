@@ -80,7 +80,7 @@
 # 	print (sentence)
 	
 def netmaskLength():
-	netmask = raw_input("Enter Netmask: ")
+	netmask = raw_input("\n\nEnter Netmask: ")
 	octSeperator = []
 	for a in range(len(netmask)):
 		if netmask[a] == '.':
@@ -127,5 +127,10 @@ def netmaskLength():
 		if len(strBinThird) != 8:
 			strBinThird = "0" + strBinThird	#turning strings into full octets
 	print strBinThird
+	strBinFourth = ("{0:b}".format(int(fourthOct))) #Binary as a string
+	for a in range(8):
+		if len(strBinFourth) != 8:
+			strBinFourth = "0" + strBinFourth	#turning strings into full octets
+	print strBinFourth
 	
 netmaskLength()
