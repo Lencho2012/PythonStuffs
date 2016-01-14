@@ -99,21 +99,33 @@ def netmaskLength():
 	print '------Converting to Binary------'
 	print "{0:b}".format(int(firstOct)) + ' ---> Printed as a Binary number'
 	binFirst = int("{0:b}".format(int(firstOct))) #Binary number
-	strBinFirst = ("{0:b}".format(int(firstOct))) #Binary as a string
-	print strBinFirst + ' ---> Printed as a string'
 	print "{0:b}".format(int(secondOct))
 	binSecond = int("{0:b}".format(int(secondOct)))
 	print "{0:b}".format(int(thirdOct))
 	binThird = int("{0:b}".format(int(thirdOct)))
 	print "{0:b}".format(int(fourthOct))
 	binFourth = int("{0:b}".format(int(fourthOct)))
-	print 'bins'
-	print binFirst
-	print binSecond
-	print binThird
-	print binFourth
+	print '------Full Binary------'
+	# print binFirst
+# 	print binSecond
+# 	print binThird
+# 	print binFourth
+	
+	strBinFirst = ("{0:b}".format(int(firstOct))) #Binary as a string
 	for a in range(8):
 		if len(strBinFirst) != 8:
 			strBinFirst = "0" + strBinFirst	#turning strings into full octets
 	print strBinFirst
+	
+	strBinSecond = ("{0:b}".format(int(secondOct))) #Binary as a string
+	for a in range(8):
+		if len(strBinSecond) != 8:
+			strBinSecond = "0" + strBinSecond	#turning strings into full octets
+	print strBinSecond
+	strBinThird = ("{0:b}".format(int(thirdOct))) #Binary as a string
+	for a in range(8):
+		if len(strBinThird) != 8:
+			strBinThird = "0" + strBinThird	#turning strings into full octets
+	print strBinThird
+	
 netmaskLength()
