@@ -132,5 +132,14 @@ def netmaskLength():
 		if len(strBinFourth) != 8:
 			strBinFourth = "0" + strBinFourth	#turning strings into full octets
 	print strBinFourth
+	prefix = 0
+	fullMask = strBinFirst + ' ' + strBinSecond + ' ' + strBinThird + ' ' + strBinFourth
+	print fullMask
+	for d in range(len(fullMask)):
+		if fullMask[d] == '1':
+			prefix += 1
+	strPrefix = str(prefix)
+	print "Prefix = /" + strPrefix
+	
 	
 netmaskLength()
