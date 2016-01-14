@@ -121,9 +121,9 @@ def netmaskLength():
 	
 	octBinList = convertToBinaryList(octList)
 	print octBinList
-	i = 10001000
-	j = 01110111
-	print i & j
+	i = 13
+	j = 5
+	print bin(i&j)
 
 	print '------Converting to Binary------'
 	print "{0:b}".format(int(firstOct))
