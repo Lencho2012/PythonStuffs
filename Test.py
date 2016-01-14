@@ -97,7 +97,7 @@ def netmaskLength():
 	print thirdOct
 	print fourthOct
 	print '------Converting to Binary------'
-	print "{0:b}".format(int(firstOct)) + ' ---> Printed as a Binary number'
+	print "{0:b}".format(int(firstOct))
 	binFirst = int("{0:b}".format(int(firstOct))) #Binary number
 	print "{0:b}".format(int(secondOct))
 	binSecond = int("{0:b}".format(int(secondOct)))
@@ -105,7 +105,7 @@ def netmaskLength():
 	binThird = int("{0:b}".format(int(thirdOct)))
 	print "{0:b}".format(int(fourthOct))
 	binFourth = int("{0:b}".format(int(fourthOct)))
-	print '------Full Binary------'
+	print '------Binary as String------'
 	# print binFirst
 # 	print binSecond
 # 	print binThird
