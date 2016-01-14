@@ -78,24 +78,34 @@
 # 	sum = x + y
 # 	sentence = 'Sum of {} and {} is {}.'.format(x, y, sum)
 # 	print (sentence)
+
+##Finding separators for any IPv4 address
+def separator(ipv4):
+	octSeparator = []
+	for a in range(len(ipv4)):
+		if ipv4[a] == '.':
+			octSeparator.append(a)
+	return octSeparator
+
 	
 def netmaskLength():
 	netmask = raw_input("\n\nEnter Netmask: ")
-	octSeperator = []
-	for a in range(len(netmask)):
-		if netmask[a] == '.':
-			octSeperator.append(a)
+	octSeparator = separator(netmask)
+
 	print '------Indices for Octets------'
-	print octSeperator 
-	firstOct = netmask[:octSeperator[0]]
-	secondOct = netmask[octSeperator[0]+1:octSeperator[1]]
-	thirdOct = netmask[octSeperator[1]+1:octSeperator[2]]
-	fourthOct = netmask[octSeperator[2]+1:]
+	print octSeparator 
+	##Separating Octets
+	firstOct = netmask[:octSeparator[0]]
+	secondOct = netmask[octSeparator[0]+1:octSeparator[1]]
+	thirdOct = netmask[octSeparator[1]+1:octSeparator[2]]
+	fourthOct = netmask[octSeparator[2]+1:]
+
 	print '------Individual Octets------'
 	print firstOct
 	print secondOct
 	print thirdOct
 	print fourthOct
+
 	print '------Converting to Binary------'
 	print "{0:b}".format(int(firstOct))
 	binFirst = int("{0:b}".format(int(firstOct))) #Binary number
@@ -141,5 +151,7 @@ def netmaskLength():
 	strPrefix = str(prefix)
 	print "Prefix = /" + strPrefix
 	
-	
+	ipAddress = raw_input("Enter IP Address: ")
+
+
 netmaskLength()
