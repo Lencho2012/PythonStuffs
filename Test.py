@@ -95,7 +95,12 @@ def convertToBinaryList(octList):
 		octBinList.append(bin(int(octList[a])))
 	return octBinList	
 	
-
+##Finding Network Address with Network Mask
+def netAddress(netMask):
+	ipAddress = raw_input('Enter IP address:  ')
+	
+	for i in range(len(netMask)):
+		a = netMask[i]
 
 def netmaskLength():
 	netmask = raw_input("\n\nEnter Netmask: ")
