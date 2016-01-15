@@ -140,7 +140,13 @@ def netmaskLength():
 # 	print binThird
 # 	print binFourth
 	
-##
+##	Sticking to the old
+	testBinFirst = bin(int(firstOct))
+	print testBinFirst
+	testBinFirst2 = format(int(octBinList[0]), '#010b')
+	print testBinFirst2
+	
+	
 	
 	strBinFirst = ("{0:b}".format(int(firstOct))) #Binary as a string
 	for a in range(8):
