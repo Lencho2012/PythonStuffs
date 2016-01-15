@@ -79,13 +79,28 @@
 # 	sentence = 'Sum of {} and {} is {}.'.format(x, y, sum)
 # 	print (sentence)
 
-##Finding separators for any IPv4 address
+##Finding separators for any IPv4 address -- Maybe combine separator and put octets in a list
 def separator(ipv4):
 	octSeparator = []
 	for a in range(len(ipv4)):
 		if ipv4[a] == '.':
 			octSeparator.append(a)
 	return octSeparator
+	
+def octetList(ipv4):
+	print '\n-------octetList METHOD-------'
+	octSeparator = []
+	octetList = []
+	for a in range(len(ipv4)):
+		if ipv4[a] == '.':
+			octSeparator.append(a)
+	octetList.append(ipv4[:octSeparator[0]])
+	octetList.append(ipv4[octSeparator[0]+1:octSeparator[1]])
+	octetList.append(ipv4[octSeparator[1]+1:octSeparator[2]])
+	octetList.append(ipv4[octSeparator[2]+1:])
+	print octetList
+	
+	
 	
 ##Converting individual octets into binary and dumping in a list
 def convertToBinaryList(octList):
@@ -101,6 +116,8 @@ def netAddress(netMask):
 	
 	for i in range(len(netMask)):
 		a = netMask[i]
+		
+
 
 def netmaskLength():
 	netmask = raw_input("\n\nEnter Netmask: ")
@@ -124,6 +141,8 @@ def netmaskLength():
 	octList = [firstOct, secondOct, thirdOct, fourthOct]
 	print octList
 	
+	octetList(netmask)
+	
 	octBinList = convertToBinaryList(octList)
 	print octBinList
 	i = 13
@@ -145,11 +164,11 @@ def netmaskLength():
 # 	print binThird
 # 	print binFourth
 	
-##	Sticking to the old
-	testBinFirst = bin(int(firstOct))
-	print testBinFirst
-	testBinFirst2 = format(int(octBinList[0]), '#010b')
-	print testBinFirst2
+# Sticking to the old
+# 	testBinFirst = bin(int(firstOct))
+# 	print testBinFirst
+# 	testBinFirst2 = format(int(octBinList[0]), '#010b')
+# 	print testBinFirst2
 	
 	
 	
