@@ -104,7 +104,7 @@ def octetList(ipv4):
 	
 ##Converting individual octets into binary and dumping in a list
 def convertToBinaryList(octList):
-	print '------------------------------'
+	print '\n------------------------------'
 	octBinList = []
 	for a in range(4):
 		octBinList.append(bin(int(octList[a])))
@@ -122,12 +122,12 @@ def netAddress(netMask):
 def netmaskLength():
 	netmask = raw_input("\n\nEnter Netmask: ")
 
-	print '------Indices for Octets------'
+	print '\n------Indices for Octets------'
 	octSeparator = separator(netmask)
 	print octSeparator 
 	
 	##Separating Octets
-	print '------Individual Octets------'
+	print '\n------Individual Octets------'
 	firstOct = netmask[:octSeparator[0]]
 	secondOct = netmask[octSeparator[0]+1:octSeparator[1]]
 	thirdOct = netmask[octSeparator[1]+1:octSeparator[2]]
@@ -149,7 +149,7 @@ def netmaskLength():
 	j = 5
 	print bin(i&j)
 
-	print '------Converting to Binary------'
+	print '\n------Converting to Binary------'
 	print "{0:b}".format(int(firstOct))
 	binFirst = int("{0:b}".format(int(firstOct))) #Binary number
 	print "{0:b}".format(int(secondOct))
@@ -158,7 +158,7 @@ def netmaskLength():
 	binThird = int("{0:b}".format(int(thirdOct)))
 	print "{0:b}".format(int(fourthOct))
 	binFourth = int("{0:b}".format(int(fourthOct)))
-	print '------Binary as String------'
+	print '\n------Binary as String------'
 	# print binFirst
 # 	print binSecond
 # 	print binThird
@@ -202,7 +202,7 @@ def netmaskLength():
 		if fullMask[d] == '1':
 			prefix += 1
 	strPrefix = str(prefix)
-	print "Prefix = /" + strPrefix
+	print "Prefix = /" + strPrefix + "\n\n"
 	
 	#ipAddress = raw_input("Enter IP Address: ")
 
