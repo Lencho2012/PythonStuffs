@@ -79,7 +79,7 @@
 # 	sentence = 'Sum of {} and {} is {}.'.format(x, y, sum)
 # 	print (sentence)
 
-##Finding separators for any IPv4 address
+##Finding separators for any IPv4 address -- Maybe combine separator and put octets in a list
 def separator(ipv4):
 	octSeparator = []
 	for a in range(len(ipv4)):
@@ -87,25 +87,47 @@ def separator(ipv4):
 			octSeparator.append(a)
 	return octSeparator
 	
+def octetList(ipv4):
+	print '\n-------octetList METHOD-------'
+	octSeparator = []
+	octetList = []
+	for a in range(len(ipv4)):
+		if ipv4[a] == '.':
+			octSeparator.append(a)
+	octetList.append(ipv4[:octSeparator[0]])
+	octetList.append(ipv4[octSeparator[0]+1:octSeparator[1]])
+	octetList.append(ipv4[octSeparator[1]+1:octSeparator[2]])
+	octetList.append(ipv4[octSeparator[2]+1:])
+	print octetList
+	
+	
+	
 ##Converting individual octets into binary and dumping in a list
 def convertToBinaryList(octList):
-	print '------------------------------'
+	print '\n------------------------------'
 	octBinList = []
 	for a in range(4):
 		octBinList.append(bin(int(octList[a])))
 	return octBinList	
 	
+##Finding Network Address with Network Mask
+def netAddress(netMask):
+	ipAddress = raw_input('Enter IP address:  ')
+	
+	for i in range(len(netMask)):
+		a = netMask[i]
+		
 
 
 def netmaskLength():
 	netmask = raw_input("\n\nEnter Netmask: ")
 
-	print '------Indices for Octets------'
+	print '\n------Indices for Octets------'
 	octSeparator = separator(netmask)
 	print octSeparator 
 	
 	##Separating Octets
-	print '------Individual Octets------'
+	print '\n------Individual Octets------'
 	firstOct = netmask[:octSeparator[0]]
 	secondOct = netmask[octSeparator[0]+1:octSeparator[1]]
 	thirdOct = netmask[octSeparator[1]+1:octSeparator[2]]
@@ -119,13 +141,15 @@ def netmaskLength():
 	octList = [firstOct, secondOct, thirdOct, fourthOct]
 	print octList
 	
+	octetList(netmask)
+	
 	octBinList = convertToBinaryList(octList)
 	print octBinList
 	i = 13
 	j = 5
 	print bin(i&j)
 
-	print '------Converting to Binary------'
+	print '\n------Converting to Binary------'
 	print "{0:b}".format(int(firstOct))
 	binFirst = int("{0:b}".format(int(firstOct))) #Binary number
 	print "{0:b}".format(int(secondOct))
@@ -134,13 +158,19 @@ def netmaskLength():
 	binThird = int("{0:b}".format(int(thirdOct)))
 	print "{0:b}".format(int(fourthOct))
 	binFourth = int("{0:b}".format(int(fourthOct)))
-	print '------Binary as String------'
+	print '\n------Binary as String------'
 	# print binFirst
 # 	print binSecond
 # 	print binThird
 # 	print binFourth
 	
-##
+# Sticking to the old
+# 	testBinFirst = bin(int(firstOct))
+# 	print testBinFirst
+# 	testBinFirst2 = format(int(octBinList[0]), '#010b')
+# 	print testBinFirst2
+	
+	
 	
 	strBinFirst = ("{0:b}".format(int(firstOct))) #Binary as a string
 	for a in range(8):
@@ -172,7 +202,7 @@ def netmaskLength():
 		if fullMask[d] == '1':
 			prefix += 1
 	strPrefix = str(prefix)
-	print "Prefix = /" + strPrefix
+	print "Prefix = /" + strPrefix + "\n\n"
 	
 	#ipAddress = raw_input("Enter IP Address: ")
 
